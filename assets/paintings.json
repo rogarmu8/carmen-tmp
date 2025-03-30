@@ -13,13 +13,6 @@
             "dimensions": "150 x 120 cm",
             "image": "/carmen-tmp/assets/img/portfolio-50.jpg",
             "date": "15/03/2024"
-        },
-        {
-            "title": "Another Painting",
-            "medium": "Acrylic on canvas",
-            "dimensions": "150 x 120 cm",
-            "image": "/carmen-tmp/assets/img/portfolio-56.jpg",
-            "date": "15/03/2024"
         }
     ]
 } 
