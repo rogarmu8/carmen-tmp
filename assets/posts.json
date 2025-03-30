@@ -1,0 +1,16 @@
+{
+    "posts": [
+        {
+            "title": "Publicacion 1",
+            "subtitle": "2025 - London",
+            "date": "25/10/2025",
+            "url": "#"
+        },
+        {
+            "title": "Publicacion 2",
+            "subtitle": "2025 - NY",
+            "date": "15/03/2024",
+            "url": "#"
+        }
+    ]
+} 

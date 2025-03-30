@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carmen Montilla</title>
+    <meta name="description" content="Carmen Montilla is a painter based in Madrid, Spain.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Dream Orphans';
+            src: url('/assets/fonts/Dream Orphans.woff2') format('woff2'),
+                 url('/assets/fonts/Dream Orphans.woff') format('woff'),
+                 url('/assets/fonts/Dream Orphans.otf') format('opentype');
+            font-display: swap;
+
+            font-family: 'Comfortaa-Regular';
+            src: url('/assets/fonts/Comfortaa-Regular.woff2') format('woff2'),
+                 url('/assets/fonts/Comfortaa-Regular.woff') format('woff'),
+                 url('/assets/fonts/Comfortaa-Regular.otf') format('opentype');
+            font-display: swap;
+
+            font-family: 'Pompadour';
+            src: url('/assets/fonts/Pompadour.woff2') format('woff2'),
+                 url('/assets/fonts/Pompadour.woff') format('woff'),
+                 url('/assets/fonts/Pompadour.otf') format('opentype');
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'Pompadour', sans-serif;
+        }
+
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-icon-bar {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .menu-button.active .bar1 {
+            transform: rotate(-45deg) translate(-6px, 5px);
+        }
+
+        .menu-button.active .bar2 {
+            opacity: 0;
+        }
+
+        .menu-button.active .bar3 {
+            transform: rotate(45deg) translate(-6px, -5px);
+        }
+    </style>
+</head>
+<body class="flex flex-col xs:flex-row bg-white min-h-screen overflow-hidden">
+    <!-- Mobile Header -->
+    <div class="xs:hidden flex justify-between items-center p-6 fixed w-full top-0 z-50 bg-white">
+        <h1 class="text-2xl font-bold">Carmen Montilla</h1>
+        <button id="menuButton" class="menu-button w-8 h-8 flex flex-col justify-center space-y-1.5">
+            <span class="menu-icon-bar bar1 block w-8 h-0.5 bg-black"></span>
+            <span class="menu-icon-bar bar2 block w-8 h-0.5 bg-black"></span>
+            <span class="menu-icon-bar bar3 block w-8 h-0.5 bg-black"></span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="menu-overlay fixed inset-0 bg-white z-40 xs:hidden flex flex-col justify-center">
+        <div class="absolute top-6 right-6">
+            <button id="closeMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center space-y-8">
+            <a href="#" data-page="paintings" class="text-xl font-semibold">Paintings</a>
+            <a href="#" data-page="about" class="text-xl text-gray-600">About</a>
+            <a href="#" data-page="posts" class="text-xl text-gray-600">Posts</a>
+            <a href="#" data-page="contact" class="text-xl text-gray-600">Contact</a>
+        </nav>
+        <div class="text-[10px] text-gray-500 absolute bottom-2 left-4">
+            © Carmen Montilla
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="hidden xs:flex w-1/5 p-6 bg-white flex-col justify-between">
+        <div>
+            <h1 class="text-2xl font-semibold">Carmen Montilla</h1>
+            <nav class="mt-4 space-y-1 opacity-60">
+                <a href="#" data-page="paintings" class="block font-semibold hover:opacity-60">Paintings</a>
+                <a href="#" data-page="about" class="block text-gray-600 hover:opacity-60">About</a>
+                <a href="#" data-page="posts" class="block text-gray-600 hover:opacity-60">Posts</a>
+                <a href="#" data-page="contact" class="block text-gray-600 hover:opacity-60">Contact</a>
+            </nav>
+        </div>
+        <div class="text-xs text-gray-400 absolute bottom-3 left-4">
+            © Carmen Montilla
+        </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden xs:mt-0 mt-20">
+
+        
+    </main>
+    <div class="xs:hidden absolute bottom-2 left-4 text-[10px] text-gray-500">
+        © Carmen Montilla
+    </div>
+    
+    <script>
+        const pageContents = {
+            paintings: `
+                <div class="flex flex-col h-full">
+                    <!-- Slides -->
+                    <div class="overflow-hidden relative flex-1 flex items-center">
+                        <div id="slides" class="flex h-full xs:mr-6">
+                        </div>
+                        <!-- Click areas for navigation -->
+                        <div id="prevArea" class="absolute left-0 top-0 w-1/2 h-full cursor-pointer"></div>
+                        <div id="nextArea" class="absolute right-0 top-0 w-1/2 h-full cursor-pointer"></div>
+                    </div>
+                    <!-- Navigation -->
+                    <div class="fixed xs:relative bottom-4 left-0 right-0 bg-white py-4 xs:py-0 xs:mt-8">
+                        <div class="relative w-full text-center">
+                            <button id="prev" class="absolute left-0 left-1/5 xs:left-1/4 xl:left-1/3 top-0 -mt-8 p-8 text-gray-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div>
+                                <h2 id="currentTitle" class="text-md text-gray-700"></h2>
+                                <p id="currentMedium" class="text-xs text-gray-600"></p>
+                                <p id="currentDimensions" class="text-xs text-gray-600"></p>
+                            </div>
+                            <button id="next" class="absolute right-0 right-1/5 xs:right-1/4 xl:right-1/3 top-0 -mt-8 p-8 text-gray-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `,
+            about: `
+                <div class="h-[80vh] sm:h-[92vh] overflow-y-auto">
+                    <div class="p-8 xs:pl-16">
+                        <div class="space-y-8 text-sm text-gray-600" id="aboutContent">
+                            <!-- About content will be loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+            `,
+            contact: `
+                <div class="p-8 xs:pl-16">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><a href="mailto:carmenmontillacastillo@outlook.com" class="hover:opacity-60">carmenmontillacastillo@outlook.com</a></p>
+                        <p><a href="https://www.instagram.com/carmenmontillaart" target="_blank" class="hover:opacity-60">@carmenmontillaart</a></p>
+                    </div>
+                </div>
+            `,
+            posts: `
+                <div class="h-[80vh] sm:h-[92vh] overflow-y-auto">
+                    <div class="p-8 xs:pl-16">
+                        <div class="space-y-8 text-sm" id="postsList">
+                            <!-- Posts will be loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+            `
+        };
+
+        function loadPage(pageName) {
+            const mainContent = document.querySelector('main');
+            mainContent.innerHTML = pageContents[pageName];
+            
+            if (pageName === 'paintings') {
+                initializePaintings();
+            } else if (pageName === 'posts') {
+                initializePosts();
+            } else if (pageName === 'about') {
+                initializeAbout();
+            }
+            
+            // Update active state in navigation
+            document.querySelectorAll('[data-page]').forEach(link => {
+                if (link.dataset.page === pageName) {
+                    link.classList.add('font-semibold');
+                    link.classList.remove('text-gray-600');
+                } else {
+                    link.classList.remove('font-semibold');
+                    link.classList.add('text-gray-600');
+                }
+            });
+            
+            // Close mobile menu if open
+            mobileMenu.classList.remove('active');
+            menuButton.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add click handlers to all navigation links
+        document.querySelectorAll('[data-page]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                loadPage(e.target.dataset.page);
+            });
+        });
+
+        // Initialize paintings functionality
+        async function initializePaintings() {
+            try {
+                // Fetch paintings data from JSON file
+                const response = await fetch('assets/paintings.json');
+                const data = await response.json();
+                // Sort paintings by date, most recent first
+                const paintings = data.paintings.sort((a, b) => {
+                    const dateA = a.date.split('/').reverse().join('-');
+                    const dateB = b.date.split('/').reverse().join('-');
+                    return new Date(dateB) - new Date(dateA);
+                });
+
+                // Generate slides HTML
+                const slidesContainer = document.getElementById('slides');
+                slidesContainer.innerHTML = paintings.map((painting, idx) => `
+                    <div class="min-w-full flex flex-col items-center justify-center ${idx === 0 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500">
+                        <img src="${painting.image}" 
+                             alt="${painting.title}" 
+                             class="xs:max-h-full xs:w-auto w-[calc(100%-40px)] max-w-full object-contain mx-auto">
+                    </div>
+                `).join('');
+
+                let index = 0;
+                
+                function updateInfo(index) {
+                    const painting = paintings[index];
+                    document.getElementById('currentTitle').textContent = painting.title;
+                    document.getElementById('currentMedium').textContent = painting.medium;
+                    document.getElementById('currentDimensions').textContent = painting.dimensions;
+                }
+
+                // Initialize with first painting's info
+                updateInfo(0);
+
+                function updateSlides(newIndex) {
+                    const slideElements = slidesContainer.children;
+                    // Fade out all slides
+                    Array.from(slideElements).forEach(slide => {
+                        slide.style.opacity = '0';
+                    });
+                    
+                    // Fade in the active slide
+                    setTimeout(() => {
+                        slidesContainer.style.transform = `translateX(-${newIndex * 100}%)`;
+                        slideElements[newIndex].style.opacity = '1';
+                    }, 300);
+                    
+                    updateInfo(newIndex);
+                }
+                
+                // Add click handlers for the slide areas
+                document.getElementById('prevArea').addEventListener('click', () => {
+                    if (index > 0) {
+                        index--;
+                        updateSlides(index);
+                    } else {
+                        index = paintings.length - 1;
+                        updateSlides(index);
+                    }
+                });
+                
+                document.getElementById('nextArea').addEventListener('click', () => {
+                    if (index < paintings.length - 1) {
+                        index++;
+                        updateSlides(index);
+                    } else {
+                        index = 0;
+                        updateSlides(index);
+                    }
+                });
+
+                // Add click handlers for the navigation buttons
+                document.getElementById('prev').addEventListener('click', () => {
+                    if (index > 0) {
+                        index--;
+                        updateSlides(index);
+                    } else {
+                        index = paintings.length - 1;
+                        updateSlides(index);
+                    }
+                });
+                
+                document.getElementById('next').addEventListener('click', () => {
+                    if (index < paintings.length - 1) {
+                        index++;
+                        updateSlides(index);
+                    } else {
+                        index = 0;
+                        updateSlides(index);
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error loading paintings:', error);
+            }
+        }
+
+        // Mobile menu functionality
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            menuButton.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'xs': '640px',
+                    'sm': '768px',
+                    'md': '1024px',
+                    'lg': '1280px',
+                    'xl': '1536px',
+                }
+            }
+        }
+
+        // Load paintings page by default
+        loadPage('paintings');
+
+        async function initializePosts() {
+            try {
+                const response = await fetch('assets/posts.json');
+                const data = await response.json();
+                // Sort posts by date, most recent first
+                const posts = data.posts.sort((a, b) => {
+                    const dateA = a.date.split('/').reverse().join('-');
+                    const dateB = b.date.split('/').reverse().join('-');
+                    return new Date(dateB) - new Date(dateA);
+                });
+
+                const postsContainer = document.getElementById('postsList');
+                postsContainer.innerHTML = posts.map(post => `
+                    <div class="space-y-1">
+                        <a href="${post.url}" class="block hover:opacity-60">
+                            <p class="font-semibold">${post.title}</p>
+                            <p class="text-gray-600">${post.subtitle}</p>
+                        </a>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading posts:', error);
+            }
+        }
+
+        // Add initialization function for about page
+        async function initializeAbout() {
+            try {
+                const response = await fetch('assets/about.json');
+                const data = await response.json();
+                
+                const aboutContainer = document.getElementById('aboutContent');
+                aboutContainer.innerHTML = `
+                    <div class="space-y-2">
+                        ${data.summary.map(line => `<p>${line}</p>`).join('')}
+                    </div>
+
+                    <div class="space-y-2">
+                        ${data.studies.map(study => `<p>${study}</p>`).join('')}
+                    </div>
+
+                    <div class="space-y-2">
+                        ${data.exhibitions.map(expo => `<p>${expo}</p>`).join('')}
+                    </div>
+
+                    <div class="space-y-2">
+                        ${data.collections.map(collection => `<p>${collection}</p>`).join('')}
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading about data:', error);
+            }
+        }
+    </script>
+</body>
+</html>
