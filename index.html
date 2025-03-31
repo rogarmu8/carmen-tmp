@@ -27,13 +27,17 @@
             font-display: swap;
 
             font-family: 'GloFont';
-            src: url('/assets/fonts/GloFont.woff2') format('woff2'),
-                 url('/assets/fonts/GloFont.woff') format('woff'),
-                 url('/assets/fonts/GloFont.otf') format('opentype');
+            src: url('/carmen-tmp/assets/fonts/GloFont.woff2') format('woff2'),
+                 url('/carmen-tmp/assets/fonts/GloFont.woff') format('woff'),
+                 url('/carmen-tmp/assets/fonts/GloFont.otf') format('opentype');
             font-display: swap;
         }
 
         body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1 {
             font-family: 'GloFont', sans-serif;
         }
 
@@ -100,7 +104,7 @@
     <aside class="hidden xs:flex w-1/5 p-6 bg-white flex-col justify-between">
         <div>
             <h1 class="text-2xl font-semibold mt-6">Carmen Montilla</h1>
-            <nav class="mt-4 space-y-1 opacity-60">
+            <nav class="ml-1 mt-4 space-y-1 opacity-60 text-lg">
                 <a href="#" data-page="paintings" class="block font-semibold hover:opacity-60">Paintings</a>
                 <a href="#" data-page="about" class="block text-gray-600 hover:opacity-60">About</a>
                 <a href="#" data-page="posts" class="block text-gray-600 hover:opacity-60">Posts</a>
@@ -126,7 +130,7 @@
             paintings: `
                 <div class="flex flex-col h-full">
                     <!-- Slides -->
-                    <div class="overflow-hidden relative flex-1 flex items-center justify-center mt-[calc(25%)] xs:mt-12 xs:mr-6 mb-24 xs:mb-0">
+                    <div class="overflow-hidden relative flex-1 flex items-center justify-center mt-[calc(30%)] xs:mt-12 xs:mr-6 mb-24 xs:mb-0">
                         <div id="slides" class="flex h-full">
                             <!-- Slides will be loaded dynamically -->
                         </div>
