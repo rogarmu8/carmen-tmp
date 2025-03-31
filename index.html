@@ -25,10 +25,16 @@
                  url('/assets/fonts/Pompadour.woff') format('woff'),
                  url('/assets/fonts/Pompadour.otf') format('opentype');
             font-display: swap;
+
+            font-family: 'GloFont';
+            src: url('/assets/fonts/GloFont.woff2') format('woff2'),
+                 url('/assets/fonts/GloFont.woff') format('woff'),
+                 url('/assets/fonts/GloFont.otf') format('opentype');
+            font-display: swap;
         }
 
         body {
-            font-family: 'Pompadour', sans-serif;
+            font-family: 'GloFont', sans-serif;
         }
 
         .menu-overlay {
@@ -93,7 +99,7 @@
     <!-- Sidebar -->
     <aside class="hidden xs:flex w-1/5 p-6 bg-white flex-col justify-between">
         <div>
-            <h1 class="text-2xl font-semibold">Carmen Montilla</h1>
+            <h1 class="text-2xl font-semibold mt-6">Carmen Montilla</h1>
             <nav class="mt-4 space-y-1 opacity-60">
                 <a href="#" data-page="paintings" class="block font-semibold hover:opacity-60">Paintings</a>
                 <a href="#" data-page="about" class="block text-gray-600 hover:opacity-60">About</a>
@@ -107,7 +113,7 @@
     </aside>
     
     <!-- Main Content -->
-    <main class="flex-1 flex flex-col h-screen overflow-hidden xs:mt-0 mt-20">
+    <main class="flex-1 flex flex-col h-screen overflow-hidden bg-white">
 
         
     </main>
@@ -120,8 +126,9 @@
             paintings: `
                 <div class="flex flex-col h-full">
                     <!-- Slides -->
-                    <div class="overflow-hidden relative flex-1 flex items-center">
-                        <div id="slides" class="flex h-full xs:mr-6">
+                    <div class="overflow-hidden relative flex-1 flex items-center justify-center mt-[calc(25%)] xs:mt-12 xs:mr-6 mb-24 xs:mb-0">
+                        <div id="slides" class="flex h-full">
+                            <!-- Slides will be loaded dynamically -->
                         </div>
                         <!-- Click areas for navigation -->
                         <div id="prevArea" class="absolute left-0 top-0 w-1/2 h-full cursor-pointer"></div>
@@ -131,8 +138,11 @@
                     <div class="fixed xs:relative bottom-4 left-0 right-0 bg-white py-4 xs:py-0 xs:mt-8">
                         <div class="relative w-full text-center">
                             <button id="prev" class="absolute left-0 left-1/5 xs:left-1/4 xl:left-1/3 top-0 -mt-8 p-8 text-gray-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7 xs:block hidden">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7 block xs:hidden mt-0.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
                                 </svg>
                             </button>
                             <div>
@@ -141,16 +151,21 @@
                                 <p id="currentDimensions" class="text-xs text-gray-600"></p>
                             </div>
                             <button id="next" class="absolute right-0 right-1/5 xs:right-1/4 xl:right-1/3 top-0 -mt-8 p-8 text-gray-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7 xs:block hidden">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-7 h-7 block xs:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </button>
                         </div>
+                        <!-- White cover below navigation -->
+                        <div class="absolute -bottom-8 left-0 right-0 h-8 bg-white"></div>
                     </div>
                 </div>
             `,
             about: `
-                <div class="h-[80vh] sm:h-[92vh] overflow-y-auto">
+                <div class="mt-16 xs:mt-5 h-[80vh] sm:h-[92vh] overflow-y-auto">
                     <div class="p-8 xs:pl-16">
                         <div class="space-y-8 text-sm text-gray-600" id="aboutContent">
                             <!-- About content will be loaded dynamically -->
@@ -159,7 +174,7 @@
                 </div>
             `,
             contact: `
-                <div class="p-8 xs:pl-16">
+                <div class="mt-16 xs:mt-5 p-8 xs:pl-16">
                     <div class="space-y-2 text-sm text-gray-600">
                         <p><a href="mailto:carmenmontillacastillo@outlook.com" class="hover:opacity-60">carmenmontillacastillo@outlook.com</a></p>
                         <p><a href="https://www.instagram.com/carmenmontillaart" target="_blank" class="hover:opacity-60">@carmenmontillaart</a></p>
@@ -167,7 +182,7 @@
                 </div>
             `,
             posts: `
-                <div class="h-[80vh] sm:h-[92vh] overflow-y-auto">
+                <div class="mt-16 xs:mt-5 h-[80vh] sm:h-[92vh] overflow-y-auto">
                     <div class="p-8 xs:pl-16">
                         <div class="space-y-8 text-sm" id="postsList">
                             <!-- Posts will be loaded dynamically -->
@@ -233,7 +248,7 @@
                     <div class="min-w-full flex flex-col items-center justify-center ${idx === 0 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500">
                         <img src="${painting.image}" 
                              alt="${painting.title}" 
-                             class="xs:max-h-full xs:w-auto w-[calc(100%-40px)] max-w-full object-contain mx-auto">
+                             class="max-h-full xs:w-auto w-[calc(90%)] max-w-full object-contain">
                     </div>
                 `).join('');
 
