@@ -130,7 +130,7 @@
             paintings: `
                 <div class="flex flex-col justify-center items-center min-h-screen">
                     <!-- Slides -->
-                    <div class="overflow-hidden relative flex-1 flex items-center justify-center mt-[calc(0%)] xs:mt-12 xs:mr-6 mb-24 xs:mb-0">
+                    <div class="overflow-hidden relative flex-1 flex items-center justify-center xs:mt-12 xs:mr-6 xs:mb-0">
                         <div id="slides" class="flex h-full">
                             <!-- Slides will be loaded dynamically -->
                         </div>
@@ -263,10 +263,10 @@
                 // Generate slides HTML
                 const slidesContainer = document.getElementById('slides');
                 slidesContainer.innerHTML = paintings.map((painting, idx) => `
-                    <div class="min-w-full flex flex-col items-center justify-center ${idx === 0 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500">
+                    <div class="min-w-full h-[calc(100vh-10rem)] xs:h-full flex flex-col items-center justify-center ${idx === 0 ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500">
                         <img src="${painting.image}" 
                              alt="${painting.title}" 
-                             class="max-h-full xs:w-auto w-[calc(90%)] max-w-full object-contain">
+                             class="h-[calc(73vh)] mb-8 xs:mb-0 xs:h-full xs:w-auto w-[calc(90%)] max-w-full object-contain">
                     </div>
                 `).join('');
 

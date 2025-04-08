@@ -1,18 +1,249 @@
 {
     "paintings": [
         {
-            "title": "Binibeca Beach (2025)",
-            "medium": "Oil in linen",
-            "dimensions": "215 x 180 cm",
-            "image": "/assets/img/portfolio-58.jpg",
-            "date": "25/10/2025"
+            "title": "Sea wind (2025)",
+            "medium": "Oil on canvas",
+            "dimensions": "90 x 90 cm",
+            "image": "/assets/img/1-sea-wind.jpg",
+            "date": "19/01/2024"
         },
         {
-            "title": "Another Painting",
+            "title": "Binibeca beach (2024)",
+            "medium": "Oil on wood panel",
+            "dimensions": "60 x 50 cm",
+            "image": "/assets/img/2-binibeca-beach.jpg",
+            "date": "09/01/2024"
+        },
+        {
+            "title": "Caló Roig (2024)",
+            "medium": "Oil on wood panel",
+            "dimensions": "60 x 50 cm",
+            "image": "/assets/img/3-calo-roig.jpg",
+            "date": "30/12/2023"
+        },
+        {
+            "title": "Marina IV (2024)",
+            "medium": "Oil on wood panel",
+            "dimensions": "25 x 25 cm",
+            "image": "/assets/img/4-marina-iv.jpg",
+            "date": "20/12/2023"
+        },
+        {
+            "title": "Marina III (2024)",
+            "medium": "Oil on wood panel",
+            "dimensions": "30 x 25 cm",
+            "image": "/assets/img/5-marina-iii.jpg",
+            "date": "10/12/2023"
+        },
+        {
+            "title": "Estudio IV (2024)",
+            "medium": "Acrylic on wood panel",
+            "dimensions": "25 x 25 cm",
+            "image": "/assets/img/6-estudio-iv.jpg",
+            "date": "30/11/2023"
+        },
+        {
+            "title": "Estudio III (2024)",
+            "medium": "Acrylic on wood panel",
+            "dimensions": "25 x 25 cm",
+            "image": "/assets/img/7-estudio--iii.jpg",
+            "date": "20/11/2023"
+        },
+        {
+            "title": "Estudio II (2024)",
+            "medium": "Acrylic on wood panel",
+            "dimensions": "25 x 25 cm",
+            "image": "/assets/img/8-estudio-ii.jpg",
+            "date": "10/11/2023"
+        },
+        {
+            "title": "Estudio I (2024)",
+            "medium": "Acrylic on wood panel",
+            "dimensions": "40 x 40 cm",
+            "image": "/assets/img/9-estudio-i.jpg",
+            "date": "31/10/2023"
+        },
+        {
+            "title": "Blue Iris (2024)",
             "medium": "Acrylic on canvas",
-            "dimensions": "150 x 120 cm",
-            "image": "/assets/img/portfolio-50.jpg",
-            "date": "15/03/2024"
+            "dimensions": "146 x 97 cm",
+            "image": "/assets/img/10-blue-iris.jpg",
+            "date": "21/10/2023"
+        },
+        {
+            "title": "Llorón (2021)",
+            "medium": "Oil on canvas",
+            "dimensions": "101 x 50 cm",
+            "image": "/assets/img/11-lloron.jpg",
+            "date": "11/10/2023"
+        },
+        {
+            "title": "Mar (2024)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "60 x 50 cm",
+            "image": "/assets/img/12-mar.jpg",
+            "date": "01/10/2023"
+        },
+        {
+            "title": "Mi mar II (2024)",
+            "medium": "Oil on canvas",
+            "dimensions": "30 x 17 cm",
+            "image": "/assets/img/13-mi-mar-ii.jpg",
+            "date": "21/09/2023"
+        },
+        {
+            "title": "Mi mar I (2024)",
+            "medium": "Oil on canvas",
+            "dimensions": "35 x 22 cm",
+            "image": "/assets/img/14-mi-mar-i.jpg",
+            "date": "11/09/2023"
+        },
+        {
+            "title": "La Vela (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "100 x 100 cm",
+            "image": "/assets/img/15-la-vela.jpg",
+            "date": "01/09/2023"
+        },
+        {
+            "title": "Ocean (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "82 x 82 cm",
+            "image": "/assets/img/16-ocean.jpg",
+            "date": "22/08/2023"
+        },
+        {
+            "title": "Marine aurora borealis (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "82 x 82 cm",
+            "image": "/assets/img/17-marine-aurora-borealis.jpg",
+            "date": "12/08/2023"
+        },
+        {
+            "title": "Beyond the valley (2024)",
+            "medium": "Oil on wood panel, mixed media",
+            "dimensions": "20 x 20 cm",
+            "image": "/assets/img/18-beyond-the-valley.jpg",
+            "date": "02/08/2023"
+        },
+        {
+            "title": "Una interpretación libre de la materidad / A personal interpretation of motherhood (2024)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "146 x 114 cm",
+            "image": "/assets/img/19-personal-interpretation-of-motherhood.jpg",
+            "date": "23/07/2023"
+        },
+        {
+            "title": "Retrato interior (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "100 x 80 cm",
+            "image": "/assets/img/20-retrato-interior.jpg",
+            "date": "13/07/2023"
+        },
+        {
+            "title": "Toscana (2023)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "100 x 100 cm",
+            "image": "/assets/img/21-toscana.jpg",
+            "date": "03/07/2023"
+        },
+        {
+            "title": "Venus (2022)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "130 x 97 cm",
+            "image": "/assets/img/22-venus.jpg",
+            "date": "23/06/2023"
+        },
+        {
+            "title": "Paradise feathers (2022)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "80 x 80 cm",
+            "image": "/assets/img/23-paradise-feathers.jpg",
+            "date": "13/06/2023"
+        },
+        {
+            "title": "Bambúes (2022)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "100 x 35 cm",
+            "image": "/assets/img/24-bambues.jpg",
+            "date": "03/06/2023"
+        },
+        {
+            "title": "Bambous (2022)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "130 x 97 cm",
+            "image": "/assets/img/25-bambous.jpg",
+            "date": "24/05/2023"
+        },
+        {
+            "title": "Automne (2022)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "130 x 97 cm",
+            "image": "/assets/img/26-automne.jpg",
+            "date": "14/05/2023"
+        },
+        {
+            "title": "Paisaje II (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "120 x 100 cm",
+            "image": "/assets/img/27-paisaje-ii.jpg",
+            "date": "04/05/2023"
+        },
+        {
+            "title": "Paisaje I (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "120 x 100 cm",
+            "image": "/assets/img/28-paisaje-i.jpg",
+            "date": "24/04/2023"
+        },
+        {
+            "title": "Nubes (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "70 x 70 cm",
+            "image": "/assets/img/29-nubes.jpg",
+            "date": "14/04/2023"
+        },
+        {
+            "title": "Mar de azules (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "70 x 70 cm",
+            "image": "/assets/img/30-mar-de-azules.jpg",
+            "date": "04/04/2023"
+        },
+        {
+            "title": "Fondo marino (2021)",
+            "medium": "Oil on canvas",
+            "dimensions": "46 x 33 cm",
+            "image": "/assets/img/31-fondo-marino.jpg",
+            "date": "25/03/2023"
+        },
+        {
+            "title": "Posidonia I (2022)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "60 x 31 cm",
+            "image": "/assets/img/32-posidonia-i.jpg",
+            "date": "15/03/2023"
+        },
+        {
+            "title": "Posidonia II (2022)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "60 x 31 cm",
+            "image": "/assets/img/33-posidonia-ii.jpg",
+            "date": "05/03/2023"
+        },
+        {
+            "title": "Salinas (2021)",
+            "medium": "Acrylic on canvas",
+            "dimensions": "70 x 70 cm",
+            "image": "/assets/img/34-salinas.jpg",
+            "date": "23/02/2023"
+        },
+        {
+            "title": "Mamut de jardín (2021)",
+            "medium": "Oil on canvas",
+            "dimensions": "80 x 60 cm",
+            "image": "/assets/img/35-mamut-de-jardin.jpg",
+            "date": "13/02/2023"
         }
     ]
 } 
