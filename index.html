@@ -446,15 +446,39 @@
                     </div>
 
                     <div class="space-y-2">
-                        ${data.studies.map(study => `<p>${study}</p>`).join('')}
+                        ${data.studies.map(study => {
+                            const year = study.split('- .')[0].trim();
+                            const content = study.split('- .')[1].trim();
+                            return `<div class="flex">
+                                <div class="w-12 flex-shrink-0">${year}</div>
+                                <div class="flex-1">${content}</div>
+                            </div>`;
+                        }).join('')}
                     </div>
 
                     <div class="space-y-2">
-                        ${data.comingsoon.map(expo => `<p>${expo}</p>`).join('')}
+                        ${data.comingsoon.map(expo => {
+                            if (expo.includes('- .')) {
+                                const year = expo.split('- .')[0].trim();
+                                const content = expo.split('- .')[1].trim();
+                                return `<div class="flex">
+                                    <div class="w-12 flex-shrink-0">${year}</div>
+                                    <div class="flex-1">${content}</div>
+                                </div>`;
+                            }
+                            return `<p>${expo}</p>`;
+                        }).join('')}
                     </div>
 
                     <div class="space-y-2">
-                        ${data.exhibitions.map(expo => `<p>${expo}</p>`).join('')}
+                        ${data.exhibitions.map(expo => {
+                            const year = expo.split('- .')[0].trim();
+                            const content = expo.split('- .')[1].trim();
+                            return `<div class="flex">
+                                <div class="w-12 flex-shrink-0">${year}</div>
+                                <div class="flex-1">${content}</div>
+                            </div>`;
+                        }).join('')}
                     </div>
 
                     <div class="space-y-2">
