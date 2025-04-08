@@ -1,16 +1,28 @@
 {
     "posts": [
         {
-            "title": "Publicacion 1",
-            "subtitle": "2025 - London",
+            "title": "Artio Magazin",
+            "subtitle": "2025 - Artiogallery",
             "date": "25/10/2025",
+            "url": "https://issuu.com/artiogallery/docs/october_magazin_copy"
+        },
+        {
+            "title": "Quick Talk Carmen Montilla Monat Gallery",
+            "subtitle": "2024 - NY",
+            "date": "15/11/2024",
             "url": "#"
         },
         {
-            "title": "Publicacion 2",
-            "subtitle": "2025 - NY",
-            "date": "15/03/2024",
-            "url": "#"
+            "title": "Ottimo riscontro per la mostra di Pesariis dedicata ai libri d'artista",
+            "subtitle": "2024 - NY",
+            "date": "15/10/2024",
+            "url": "https://www.studionord.news/conclusa-la-mostra-di-pesariis-dedicata-ai-libri-dartista/"
+        },
+        {
+            "title": "Libretto Mostra Pesariis",
+            "subtitle": "2024 - NY",
+            "date": "15/09/2024",
+            "url": "assets/posts/Libretto-Mostra-Pesariis-SITO.pdf"
         }
     ]
 } 
